@@ -53,3 +53,11 @@ dkms.conf
 
 # debug information files
 *.dwo
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+build/
+pi_calculator

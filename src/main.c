@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <time.h>
+
+#define DEFAULT_ITERATIONS 1000000
 
 /**
  * Calculate pi using the Leibniz formula (Gregory-Leibniz series)
@@ -50,7 +53,8 @@ double calculate_pi_monte_carlo(int iterations) {
 }
 
 int main() {
-    int iterations = 1000000;
+    srand(time(NULL));
+    int iterations = DEFAULT_ITERATIONS;
     
     printf("Pi Calculator\n");
     printf("=============\n\n");

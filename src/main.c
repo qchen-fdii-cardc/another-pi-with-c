@@ -2,8 +2,12 @@
 #include <stdlib.h>
 #include <math.h>
 #include <time.h>
+#include <string.h>
 
 #define DEFAULT_ITERATIONS 1000000
+#define SPIGOT_DIGITS 10000
+
+int generate_pi_spigot(int digits, char *out, size_t out_size);
 
 /**
  * Calculate pi using the Leibniz formula (Gregory-Leibniz series)
@@ -55,6 +59,7 @@ double calculate_pi_monte_carlo(int iterations) {
 int main() {
     srand(time(NULL));
     int iterations = DEFAULT_ITERATIONS;
+    char pi_digits[SPIGOT_DIGITS + 1];
     
     printf("Pi Calculator\n");
     printf("=============\n\n");
@@ -67,6 +72,12 @@ int main() {
     
     double pi_monte_carlo = calculate_pi_monte_carlo(iterations);
     printf("Monte Carlo method (iterations=%d): %.15f\n", iterations, pi_monte_carlo);
+
+    if (generate_pi_spigot(SPIGOT_DIGITS, pi_digits, sizeof(pi_digits)) == 0) {
+        printf("Spigot (first %d digits): %c.%s\n", SPIGOT_DIGITS, pi_digits[0], pi_digits + 1);
+    } else {
+        printf("Spigot calculation failed\n");
+    }
     
     printf("\nActual value of pi:               %.15f\n", M_PI);
     

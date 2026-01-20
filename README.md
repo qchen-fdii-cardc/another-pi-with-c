@@ -15,9 +15,9 @@ The Monte Carlo method represents a completely different approach based on proba
 
 ## Calculating More Digits of Pi
 
-The accuracy and precision of pi calculations depend fundamentally on the number of iterations performed by each algorithm. To obtain more digits of pi, you need to increase the iteration count, which allows the mathematical series to converge closer to the true value. The application currently uses a default of one million iterations, which provides a reasonable balance between computation time and accuracy.
+The precision of pi calculations depends fundamentally on the number of iterations performed by each algorithm. To obtain more digits of pi, you need to increase the iteration count, which allows the mathematical series to converge closer to the true value. The application currently uses a default of one million iterations, which provides a reasonable balance between computation time and precision.
 
-However, achieving additional decimal places of precision requires exponentially more iterations, especially for slower-converging methods like the Leibniz formula. To modify the number of iterations, you can edit the DEFAULT_ITERATIONS constant defined in the source code before compilation. Increasing this value to ten million, one hundred million, or even higher will progressively improve the accuracy of the results, though with correspondingly longer execution times.
+However, achieving additional decimal places typically requires significantly more iterations, with the exact relationship varying based on each algorithm's convergence rate. To modify the number of iterations, you can edit the DEFAULT_ITERATIONS constant defined in the source code before compilation. Increasing this value to ten million, one hundred million, or even higher will progressively improve the precision of the results, though with correspondingly longer execution times.
 
 Each algorithm responds differently to increased iterations, with the Nilakantha series typically requiring fewer iterations than the Leibniz formula to achieve the same precision, while the Monte Carlo method's accuracy improves more gradually and probabilistically with sample size.
 
